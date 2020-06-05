@@ -1,0 +1,34 @@
+{
+	"name": "module_name_goes_here",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "rollup -c",
+		"start": "rollup -c -w"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@types/react": "^16.9.35",
+		"@types/react-dom": "^16.9.8",
+		"babel-core": "^6.26.3",
+		"babel-runtime": "^6.26.0",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"rollup": "^2.13.1",
+		"rollup-plugin-sass": "^1.2.2",
+		"rollup-plugin-typescript2": "^0.27.1",
+		"typescript": "^3.9.5"
+	},
+	"peerDependencies": {
+		"react": "^16.8.0",
+		"react-dom": "^16.8.0"
+	},
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"react",
+		"typescript",
+		"npm"
+	]
+}
