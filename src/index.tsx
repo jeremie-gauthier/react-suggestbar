@@ -1,20 +1,21 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
+import * as ReactDOM from "react-dom";
 import "./styles.scss";
 import Suggestions from "./suggestions";
 
-const { useState } = React;
+const { useState, useRef, useEffect } = React;
 
 export type ISuggestBarProps = {
+	inputValue: any;
 	inputType?: string;
 	inputPlaceholder?: string;
-	onInputChange: VoidFunction;
+	onInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onInputSubmit: VoidFunction;
 
 	submitBtn?: React.ReactNode;
 
 	suggestData: string[];
-	suggestShow: boolean;
 	onSuggestClick: (suggestion: string) => void;
 
 	containerClassName?: string;
@@ -25,13 +26,13 @@ export type ISuggestBarProps = {
 };
 
 const SuggestBar: React.FC<ISuggestBarProps> = ({
+	inputValue,
 	inputType,
 	inputPlaceholder,
 	onInputChange,
 	onInputSubmit,
 	submitBtn,
 	suggestData,
-	suggestShow,
 	onSuggestClick,
 	containerClassName,
 	inputClassName,
@@ -39,30 +40,68 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 	suggestContainerClassName,
 	suggestClassName,
 }) => {
-	const [hasFocus, setHasFocus] = useState(false);
+	const [suggestShow, setSuggestShow] = useState(false);
+
+	const nodeSearchGroup = useRef(null);
+	useEffect(() => {
+		function handler(e: any) {
+			const domNode = ReactDOM.findDOMNode(nodeSearchGroup.current);
+
+			if (!domNode?.contains(e.target)) {
+				setSuggestShow(false);
+			}
+		}
+
+		document.addEventListener("mousedown", handler);
+
+		return function cleanup() {
+			window.removeEventListener("mousedown", handler);
+		};
+	}, []);
+
+	function handleInputChange(evt: any) {
+		onInputChange(evt);
+		if (evt.target.value.length > 0) {
+			setSuggestShow(true);
+		}
+	}
+
+	function handleInputFocus() {
+		if (inputValue.length > 0 && suggestData.length > 0) {
+			setSuggestShow(true);
+		}
+	}
+
+	function handleSuggestClick(suggestion: string) {
+		onSuggestClick(suggestion);
+		setSuggestShow(false);
+	}
 
 	return (
-		<div className={["searchGroup", containerClassName].join(" ")}>
+		<div
+			ref={nodeSearchGroup}
+			className={["searchGroup", containerClassName].join(" ")}
+		>
 			<input
 				className={["searchBar", inputClassName].join(" ")}
 				type={inputType}
+				value={inputValue}
 				placeholder={inputPlaceholder}
-				onChange={onInputChange}
+				onChange={(e) => handleInputChange(e)}
+				onFocus={handleInputFocus}
 				onSubmit={onInputSubmit}
-				onFocus={() => setHasFocus(true)}
-				onBlur={() => setHasFocus(false)}
 			/>
 			<button
 				className={["searchBtn", submitBtnClassName].join(" ")}
 				onClick={onInputSubmit}
-				onFocus={() => setHasFocus(true)}
-				onBlur={() => setHasFocus(false)}
 			>
 				{submitBtn}
 			</button>
-			{suggestShow && hasFocus ? (
+			{suggestShow ? (
 				<Suggestions
-					onSuggestClick={onSuggestClick}
+					onSuggestClick={(suggestion: string) =>
+						handleSuggestClick(suggestion)
+					}
 					suggestData={suggestData}
 					suggestContainerClassName={suggestContainerClassName}
 					suggestClassName={suggestClassName}
@@ -79,6 +118,7 @@ SuggestBar.defaultProps = {
 };
 
 SuggestBar.propTypes = {
+	inputValue: PropTypes.any,
 	inputType: PropTypes.string,
 	inputPlaceholder: PropTypes.string,
 	onInputChange: PropTypes.func.isRequired,
@@ -87,7 +127,6 @@ SuggestBar.propTypes = {
 	submitBtn: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 
 	suggestData: PropTypes.array.isRequired,
-	suggestShow: PropTypes.bool.isRequired,
 	onSuggestClick: PropTypes.func.isRequired,
 
 	containerClassName: PropTypes.string,
