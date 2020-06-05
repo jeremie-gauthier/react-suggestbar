@@ -63,6 +63,8 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 		onInputChange(evt);
 		if (evt.target.value.length > 0) {
 			setSuggestShow(true);
+		} else {
+			setSuggestShow(false);
 		}
 	}
 
