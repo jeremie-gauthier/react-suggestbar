@@ -79,6 +79,12 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 		setSuggestShow(false);
 	}
 
+	function handleKeyPress(key: string) {
+		if (key === "Enter") {
+			onInputSubmit();
+		}
+	}
+
 	return (
 		<div
 			ref={nodeSearchGroup}
@@ -92,6 +98,7 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 				onChange={(e) => handleInputChange(e)}
 				onFocus={handleInputFocus}
 				onSubmit={onInputSubmit}
+				onKeyPress={({ key }) => handleKeyPress(key)}
 			/>
 			<button
 				className={["searchBtn", submitBtnClassName].join(" ")}
