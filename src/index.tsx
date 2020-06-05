@@ -104,12 +104,6 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 				onSubmit={onInputSubmit}
 				onKeyPress={({ key }) => handleKeyPress(key)}
 			/>
-			<button
-				className={["searchBtn", submitBtnClassName].join(" ")}
-				onClick={onInputSubmit}
-			>
-				{submitBtn}
-			</button>
 
 			{suggestShow ? (
 				<Suggestions
@@ -121,6 +115,13 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 					suggestClassName={suggestClassName}
 				/>
 			) : null}
+
+			<button
+				className={["searchBtn", submitBtnClassName].join(" ")}
+				onClick={onInputSubmit}
+			>
+				{submitBtn}
+			</button>
 		</div>
 	);
 };

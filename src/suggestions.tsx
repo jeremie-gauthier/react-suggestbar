@@ -16,13 +16,13 @@ function Suggestions({
 }: ISuggestionsProps) {
 	function renderSuggestions() {
 		return suggestData.map((suggestion: string, index: number) => (
-			<div
+			<button
 				key={index}
 				className={["suggestion", suggestClassName].join(" ")}
 				onClick={() => onSuggestClick(suggestion)}
 			>
 				{suggestion}
-			</div>
+			</button>
 		));
 	}
 
