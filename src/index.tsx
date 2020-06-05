@@ -44,18 +44,22 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 
 	const nodeSearchGroup = useRef(null);
 	useEffect(() => {
-		function handler(e: any) {
-			const domNode = ReactDOM.findDOMNode(nodeSearchGroup.current);
+		const domNode = ReactDOM.findDOMNode(nodeSearchGroup.current);
 
-			if (!domNode?.contains(e.target)) {
+		function handler(evt: any) {
+			if (!domNode?.contains(evt.target)) {
 				setSuggestShow(false);
 			}
 		}
 
 		document.addEventListener("mousedown", handler);
+		document.addEventListener("keydown", handler);
+		document.addEventListener("keyup", handler);
 
 		return function cleanup() {
 			window.removeEventListener("mousedown", handler);
+			window.removeEventListener("keydown", handler);
+			window.removeEventListener("keyup", handler);
 		};
 	}, []);
 
