@@ -72,6 +72,11 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 		}
 	}
 
+	function handleInputSubmit() {
+		onInputSubmit();
+		setSuggestShow(false);
+	}
+
 	function handleInputFocus() {
 		if (inputValue.length > 0 && suggestData.length > 0) {
 			setSuggestShow(true);
@@ -101,7 +106,7 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 				placeholder={inputPlaceholder}
 				onChange={(e) => handleInputChange(e)}
 				onFocus={handleInputFocus}
-				onSubmit={onInputSubmit}
+				onSubmit={handleInputSubmit}
 				onKeyPress={({ key }) => handleKeyPress(key)}
 			/>
 
@@ -118,7 +123,7 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 
 			<button
 				className={["searchBtn", submitBtnClassName].join(" ")}
-				onClick={onInputSubmit}
+				onClick={handleInputSubmit}
 			>
 				{submitBtn}
 			</button>
