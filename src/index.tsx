@@ -97,6 +97,7 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 			>
 				{submitBtn}
 			</button>
+
 			{suggestShow ? (
 				<Suggestions
 					onSuggestClick={(suggestion: string) =>
