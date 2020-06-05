@@ -35,10 +35,7 @@
 	z-index: 1;
 	top: 100%;
 	left: 0;
-
 	width: 100%;
-	background-color: blue;
-	color: #fff;
 	border-radius: 0.5rem;
 }
 
@@ -49,7 +46,6 @@
 
 .suggestion:hover {
 	cursor: pointer;
-	background-color: blueviolet;
 	font-weight: bold;
 	border-radius: 0.5rem;
 }
