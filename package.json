@@ -1,11 +1,21 @@
 {
-	"name": "module_name_goes_here",
+	"name": "react-suggestbar",
 	"version": "1.0.0",
+	"description": "A simple searchbar with suggestion as you type",
+	"author": "Jeremie GAUTHIER",
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "rollup -c",
 		"start": "rollup -c -w"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jeremie-gauthier/react-suggestbar.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jeremie-gauthier/react-suggestbar/issues"
+	},
+	"homepage": "https://github.com/jeremie-gauthier/react-suggestbar#readme",
 	"license": "MIT",
 	"devDependencies": {
 		"@types/react": "^16.9.35",
@@ -29,6 +39,10 @@
 	"keywords": [
 		"react",
 		"typescript",
-		"npm"
+		"npm",
+		"suggestion",
+		"searchbar",
+		"suggestbar",
+		"autocomplete"
 	]
 }
