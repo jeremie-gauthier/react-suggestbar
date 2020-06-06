@@ -85,16 +85,16 @@ export default Component;
 
 ## Props
 
-| prop                      | required | type                                                 | default  | description                                                                               |
+| name                      | required | type                                                 | default  | description                                                                               |
 | ------------------------- | -------- | ---------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------- |
-| inputValue                | yes      | any                                                  |          | The `value` attribute of the `<input/>`                                                   |
+| inputValue                | **yes**  | any                                                  |          | The `value` attribute of the `<input/>`                                                   |
 | inputType                 | no       | string                                               | `"text"` | The `type` attribute of the `<input/>`                                                    |
 | inputPlaceholder          | no       | string                                               | `""`     | The `placeholder` attribute of the `<input/>`                                             |
-| onInputChange             | yes      | (event: React.ChangeEvent<HTMLInputElement>) => void |          | The event handler for the `onChange` event listener of the `<input/>`                     |
-| onInputSubmit             | yes      | VoidFunction                                         |          | The event handler for the `onSubmit` event listener of the `<input/>` and the `<button/>` |
+| onInputChange             | **yes**  | (event: React.ChangeEvent<HTMLInputElement>) => void |          | The event handler for the `onChange` event listener of the `<input/>`                     |
+| onInputSubmit             | **yes**  | VoidFunction                                         |          | The event handler for the `onSubmit` event listener of the `<input/>` and the `<button/>` |
 | submitBtn                 | no       | React.ReactNode                                      | `"Ok"`   | The content (children) of the `<button/>`                                                 |
-| suggestData               | yes      | string[]                                             |          | The list of suggestions the suggestbar must show                                          |
-| onSuggestClick            | yes      | (suggestion: string) => void                         |          | The event handler for the `onClick` event listener of each suggestion                     |
+| suggestData               | **yes**  | string[]                                             |          | The list of suggestions the suggestbar must show                                          |
+| onSuggestClick            | **yes**  | (suggestion: string) => void                         |          | The event handler for the `onClick` event listener of each suggestion                     |
 | containerClassName        | no       | string                                               |          | A CSS className for the `<div/>` container                                                |
 | inputClassName            | no       | string                                               |          | A CSS className for the `<input/>`                                                        |
 | submitBtnClassName        | no       | string                                               |          | A CSS className for the submit `<button/>`                                                |
