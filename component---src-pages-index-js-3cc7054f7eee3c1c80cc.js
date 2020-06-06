@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{RXBc:function(e,t,r){"use strict";r.r(t);var a=r("q1tI"),n=r.n(a),c=r("vrFN");r("rMck");t.default=function(){return n.a.createElement(n.a.Fragment,null,n.a.createElement(c.a,{title:"Home"}),n.a.createElement("header",null,n.a.createElement("h1",null,"react-suggestbar"),n.a.createElement("a",{href:"https://github.com/jeremie-gauthier/react-suggestbar",target:"_blank",rel:"noreferrer"},"Github")))}},rMck:function(e,t,r){}}]);
+//# sourceMappingURL=component---src-pages-index-js-3cc7054f7eee3c1c80cc.js.map
