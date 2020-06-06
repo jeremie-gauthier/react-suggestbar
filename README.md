@@ -2,9 +2,13 @@
 
 A simple searchbar with suggestion as you type
 
-[live demo](https://jeremie-gauthier.github.io/react-suggestbar)
-
-[source](https://github.com/jeremie-gauthier/react-suggestbar)
+<a href="https://jeremie-gauthier.github.io/react-suggestbar" target="_blank" rel="noreferrer">
+live demo
+</a>
+<br />
+<a href="https://github.com/jeremie-gauthier/react-suggestbar" target="_blank" rel="noreferrer">
+source
+</a>
 
 ## Summary
 
