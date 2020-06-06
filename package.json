@@ -1,49 +1,26 @@
 {
 	"name": "react-suggestbar",
+	"private": true,
+	"description": "A simple demo for react-suggestbar package",
 	"version": "1.0.0",
-	"description": "A simple searchbar with suggestion as you type",
-	"author": "Jeremie GAUTHIER",
-	"main": "dist/index.js",
-	"scripts": {
-		"build": "rollup -c",
-		"start": "rollup -c -w"
+	"author": "jergauth",
+	"dependencies": {
+		"gatsby": "^2.22.15",
+		"gatsby-plugin-react-helmet": "^3.3.2",
+		"prop-types": "^15.7.2",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"react-helmet": "^6.0.0"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/jeremie-gauthier/react-suggestbar.git"
-	},
-	"bugs": {
-		"url": "https://github.com/jeremie-gauthier/react-suggestbar/issues"
-	},
-	"homepage": "https://github.com/jeremie-gauthier/react-suggestbar#readme",
 	"license": "MIT",
+	"scripts": {
+		"build": "gatsby build",
+		"develop": "gatsby develop",
+		"clean": "gatsby clean",
+		"deploy": "yarn build && node ./scripts/deploy-github",
+		"re": "yarn clean && rm -rf node_modules && yarn"
+	},
 	"devDependencies": {
-		"@types/react": "^16.9.35",
-		"@types/react-dom": "^16.9.8",
-		"babel-core": "^6.26.3",
-		"babel-runtime": "^6.26.0",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"rollup": "^2.13.1",
-		"rollup-plugin-sass": "^1.2.2",
-		"rollup-plugin-typescript2": "^0.27.1",
-		"typescript": "^3.9.5"
-	},
-	"peerDependencies": {
-		"react": "^16.8.0",
-		"react-dom": "^16.8.0"
-	},
-	"files": [
-		"dist"
-	],
-	"keywords": [
-		"react",
-		"typescript",
-		"npm",
-		"react-component",
-		"suggestion",
-		"searchbar",
-		"suggestbar",
-		"autocomplete"
-	]
+		"gh-pages": "^3.0.0"
+	}
 }
