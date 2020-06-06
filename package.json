@@ -8,10 +8,7 @@
 		"build": "rollup -c",
 		"start": "rollup -c -w"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/jeremie-gauthier/react-suggestbar.git"
-	},
+	"repository": "git+https://github.com/jeremie-gauthier/react-suggestbar.git",
 	"bugs": {
 		"url": "https://github.com/jeremie-gauthier/react-suggestbar/issues"
 	},
@@ -45,5 +42,6 @@
 		"searchbar",
 		"suggestbar",
 		"autocomplete"
-	]
+	],
+	"private": false
 }
