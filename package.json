@@ -1,5 +1,5 @@
 {
-	"name": "@jeremie-gauthier/react-suggestbar",
+	"name": "react-suggestbar",
 	"version": "0.0.0",
 	"description": "A simple searchbar with suggestion as you type",
 	"author": "Jeremie GAUTHIER <jeremiegthr@gmail.com> (https://jeremie-gauthier.github.io/)",
@@ -14,7 +14,7 @@
 		"email": "jeremiegthr@gmail.com"
 	},
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
+		"registry": "https://registry.npmjs.org"
 	},
 	"homepage": "https://github.com/jeremie-gauthier/react-suggestbar#readme",
 	"license": "MIT",
