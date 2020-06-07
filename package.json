@@ -1,5 +1,5 @@
 {
-	"name": "@jergauth/react-suggestbar",
+	"name": "@jeremie-gauthier/react-suggestbar",
 	"version": "0.0.0",
 	"description": "A simple searchbar with suggestion as you type",
 	"author": "Jeremie GAUTHIER <jeremiegthr@gmail.com> (https://jeremie-gauthier.github.io/)",
