@@ -12,6 +12,9 @@
 	"bugs": {
 		"url": "https://github.com/jeremie-gauthier/react-suggestbar/issues"
 	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
+	},
 	"homepage": "https://github.com/jeremie-gauthier/react-suggestbar#readme",
 	"license": "MIT",
 	"devDependencies": {
