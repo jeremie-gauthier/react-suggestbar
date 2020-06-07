@@ -1,6 +1,6 @@
 {
 	"name": "react-suggestbar",
-	"version": "1.0.0",
+	"version": "0.0.0",
 	"description": "A simple searchbar with suggestion as you type",
 	"author": "Jeremie GAUTHIER",
 	"main": "dist/index.js",
