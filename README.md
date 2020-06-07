@@ -39,11 +39,7 @@ const fruits = [
 	"banana",
 	"blackberry",
 	"blueberry",
-	"cherry",
-	"peach",
-	"pear",
-	"pineapple",
-	"plum",
+	...
 ];
 
 function Component() {
@@ -51,10 +47,14 @@ function Component() {
 	const [search, setSearch] = useState("");
 
 	const change = (evt) => {
-		const value = evt.target.value;
+		let value = evt.target.value;
 
 		setSearch(value);
-		setSuggestions(fruits.filter((fruit) => fruit.startsWith(value)));
+		if (value === "") {
+			setSuggestions([]);
+		} else {
+			setSuggestions(fruits.filter((fruit) => fruit.startsWith(value)));
+		}
 	};
 
 	const submit = () => {
