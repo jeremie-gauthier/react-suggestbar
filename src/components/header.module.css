@@ -1,0 +1,23 @@
+header {
+	text-align: center;
+	color: aqua;
+}
+
+h1 {
+	margin: 0;
+}
+
+h2 {
+	font-size: 1rem;
+	margin-bottom: 0;
+}
+
+.links {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.links a {
+	margin: 1rem;
+}
