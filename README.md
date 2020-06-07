@@ -21,13 +21,11 @@ $ npm install react-suggestbar
 
 ## Description
 
-It's a simple component that show you suggestions as you type.
+It's a simple component that shows you suggestions as you type.
 
 The suggestions are hidden when the focus is no longer contains in the `<div/>` container.
 
 The user can use them to autocomplete the `<input/>`.
-
-It makes use of controlled form.
 
 ## Usage
 
