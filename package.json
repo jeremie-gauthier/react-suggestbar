@@ -18,7 +18,7 @@
 		"build": "gatsby build",
 		"develop": "gatsby develop",
 		"clean": "gatsby clean",
-		"deploy": "yarn build && node ./scripts/deploy-github",
+		"deploy": "gatsby build --prefix-paths && gh-pages -d public",
 		"re": "yarn clean && rm -rf node_modules && yarn"
 	},
 	"devDependencies": {
