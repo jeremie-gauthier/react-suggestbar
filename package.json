@@ -2,7 +2,7 @@
 	"name": "react-suggestbar",
 	"version": "0.0.0",
 	"description": "A simple searchbar with suggestion as you type",
-	"author": "Jeremie GAUTHIER",
+	"author": "Jeremie GAUTHIER <jeremiegthr@gmail.com> (https://jeremie-gauthier.github.io/)",
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "rollup -c",
@@ -10,7 +10,8 @@
 	},
 	"repository": "git+https://github.com/jeremie-gauthier/react-suggestbar.git",
 	"bugs": {
-		"url": "https://github.com/jeremie-gauthier/react-suggestbar/issues"
+		"url": "https://github.com/jeremie-gauthier/react-suggestbar/issues",
+		"email": "jeremiegthr@gmail.com"
 	},
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com/"
