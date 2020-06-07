@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SEO from "../components/seo";
 import Header from "../components/header";
-// import SuggestBar from "react-suggestbar";
+import SuggestBar from "react-suggestbar";
 import "../styles/global.css";
 
 const fruits = [
@@ -44,12 +44,13 @@ function FruitAvailable({ suggestions }) {
 
 const IndexPage = () => {
 	const [suggestions, setSuggestions] = useState([]);
+	const [acceptedValue, setAcceptedValue] = useState("");
 	const [search, setSearch] = useState("");
 
 	const change = (e) => {
 		let value = e.target.value;
-		console.log(value);
-		setSearch(value.replace(/\s/g, ""));
+
+		setSearch(value);
 		if (value === "") {
 			setSuggestions([]);
 		} else {
@@ -58,13 +59,15 @@ const IndexPage = () => {
 	};
 
 	const submit = () => {
-		console.log(`SUBMIT: ${search}`);
 		setSearch("");
+		setSuggestions([]);
+		setAcceptedValue(search);
 	};
 
 	const click = (suggestion) => {
-		console.log(`Accept: ${suggestion}`);
 		setSearch("");
+		setSuggestions([]);
+		setAcceptedValue(suggestion);
 	};
 
 	return (
@@ -73,19 +76,23 @@ const IndexPage = () => {
 			<Header />
 			<div className="core">
 				<FruitAvailable suggestions={suggestions} />
-				{/* <SuggestBar
-					inputValue={search}
-					onInputChange={change}
-					onInputSubmit={submit}
-					suggestData={suggestions}
-					onSuggestClick={click}
-					inputPlaceholder={"Type something..."}
-					submitBtn={"Submit"}
-					inputClassName={"inputClassName"}
-					containerClassName={"containerClassName"}
-					suggestContainerClassName={"suggestContainerClassName"}
-					suggestClassName={"suggestClassName"}
-				/> */}
+				<div className="package-demo">
+					<p>Value submitted: {acceptedValue}</p>
+					<SuggestBar
+						inputValue={search}
+						onInputChange={change}
+						onInputSubmit={submit}
+						suggestData={suggestions}
+						onSuggestClick={click}
+						inputPlaceholder={"Type something..."}
+						submitBtn={"Submit"}
+						inputClassName={"input"}
+						submitBtnClassName={"submit-btn"}
+						containerClassName={"container"}
+						suggestContainerClassName={"suggest-container"}
+						suggestClassName={"suggest"}
+					/>
+				</div>
 			</div>
 		</>
 	);

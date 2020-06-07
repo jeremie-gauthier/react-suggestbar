@@ -1,5 +1,10 @@
+:root {
+	--primary: #282c34;
+	--secondary: aqua;
+}
+
 body {
-	background-color: #282c34;
+	background-color: var(--primary);
 	display: flex;
 	flex-direction: column;
 	font-size: 1.5rem;
@@ -12,6 +17,14 @@ body {
 .core {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+@media (max-width: 700px) {
+	.core {
+		flex-direction: column;
+	}
 }
 
 ul {
@@ -19,12 +32,30 @@ ul {
 }
 
 .suggested {
-	color: aqua;
+	color: var(--secondary);
 	font-weight: bold;
 }
 
 .list-name {
-	color: aqua;
+	color: var(--secondary);
 	text-decoration: underline;
 	margin-bottom: 1rem;
+}
+
+.container {
+	width: 500px;
+}
+
+.submit-btn {
+	background-color: #fff;
+	color: #000;
+}
+
+.input {
+	flex: 1;
+}
+
+.suggest-container {
+	background-color: #fff;
+	color: #000;
 }
