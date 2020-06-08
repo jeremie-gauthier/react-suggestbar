@@ -110,7 +110,7 @@ const SuggestBar: React.FC<ISuggestBarProps> = ({
 				onKeyPress={({ key }) => handleKeyPress(key)}
 			/>
 
-			{suggestShow ? (
+			{suggestShow && suggestData.length > 0 ? (
 				<Suggestions
 					onSuggestClick={(suggestion: string) =>
 						handleSuggestClick(suggestion)
