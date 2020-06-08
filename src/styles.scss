@@ -51,9 +51,12 @@
 	font-size: 16px;
 }
 
+.suggestion:hover {
+	cursor: pointer;
+}
+
 .suggestion:hover,
 .suggestion:focus {
-	cursor: pointer;
 	font-weight: bold;
 	border-radius: 0.5rem;
 }
