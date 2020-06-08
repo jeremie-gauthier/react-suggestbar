@@ -10308,10 +10308,10 @@ react-style-singleton@^2.1.0:
     invariant "^2.2.4"
     tslib "^1.0.0"
 
-react-suggestbar@^0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/react-suggestbar/-/react-suggestbar-0.0.0.tgz#cbd107407a536aca4ac16f106951ad17afb9375a"
-  integrity sha512-WLgAap6CPu9hucXzPSDMlm+Bzic2xsyonbDRFamR6WVmFmNht1jcTs6FSgYiQREIz9396tuxncZf0Vvt7cUtlw==
+react-suggestbar@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-suggestbar/-/react-suggestbar-0.0.1.tgz#8fa1430794822c4d40400263d3feabaf7893f606"
+  integrity sha512-3kYxQ3bRJpSoYquso9Wky+5bYixfSqUKO1X/W5i8RoQwy/p24+7rzW0Ecgo5dkhQxZDD31i+SdC7PxjgW6ImMw==
 
 react@^16.12.0, react@^16.8.0:
   version "16.13.1"
