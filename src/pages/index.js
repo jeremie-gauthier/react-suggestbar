@@ -54,7 +54,9 @@ const IndexPage = () => {
 		if (value === "") {
 			setSuggestions([]);
 		} else {
-			setSuggestions(fruits.filter((fruit) => fruit.startsWith(value)));
+			setSuggestions(
+				fruits.filter((fruit) => fruit.startsWith(value.toLowerCase()))
+			);
 		}
 	};
 
